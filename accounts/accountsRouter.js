@@ -33,4 +33,14 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    Accounts.update(req.params.id, req.body)
+    .then(thenRes => {
+        res.status(201).json(req.body)
+    })
+    .catch(err => {
+        res.status(500).json({ errorMessage: "internal server error"})
+    })
+})
+
 module.exports = router
