@@ -18,7 +18,7 @@ function getById(id) {
     .first()
 }
 
-function insert(account) {
+function insert(accounts) {
     return db('accounts')
       .insert(accounts)
       .then(ids => {
